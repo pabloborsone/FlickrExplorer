@@ -7,22 +7,22 @@
 
 import Foundation
 
-struct FlickrFeed: Codable {
+struct FlickrFeed: Decodable {
     let title: String
     let link: URL
     let description: String
-    let modified: String
+    let modified: Date
     let generator: URL
     let items: [FlickrItem]
 }
 
-struct FlickrItem: Codable {
+struct FlickrItem: Decodable {
     let title: String
     let link: URL
     let media: Media
-    let dateTaken: String
+    let dateTaken: Date
     let description: String
-    let published: String
+    let published: Date
     let author: String
     let authorID: String
     let tags: String
@@ -40,6 +40,6 @@ struct FlickrItem: Codable {
     }
 }
 
-struct Media: Codable {
+struct Media: Decodable {
     let m: URL
 }
